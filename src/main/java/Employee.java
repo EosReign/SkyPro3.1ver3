@@ -12,6 +12,8 @@ public class Employee {
             throw new BadRequestException("400 Bad Request");
         } else if (StringUtils.isAllUpperCase(fullName)) {
             throw new BadRequestException("400 Bad Request");
+        } else if (StringUtils.isNumericSpace(fullName)) {
+            throw new BadRequestException("400 Bad Request");
         } else if (StringUtils.isAllLowerCase(fullName)) {
             fullName = StringUtils.capitalize(fullName);
         } else {
